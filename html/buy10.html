@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="buy10.css">
+    <script>
+        function updateSuitOptions() {
+            const suit = document.getElementById('suit').value;
+            const colorSelect = document.getElementById('color');
+            const sizeSelect = document.getElementById('size');
+            let options = [];
+            let sizeOptions = [];
+
+            // Default size options
+            sizeOptions = ['S', 'M', 'L', 'XL'];
+
+            // Update colors and sizes based on the selected suit
+            if (suit === 'classicBlackSuit') {
+                options = ['Black', 'Charcoal'];
+            } else if (suit === 'elegantNavySuit') {
+                options = ['Navy', 'Blue'];
+            } else if (suit === 'premiumGraySuit') {
+                options = ['Gray', 'Light Gray'];
+            } else if (suit === 'modernFitBrownSuit') {
+                options = ['Brown', 'Dark Brown'];
+            } else if (suit === 'tailoredBlackSuit') {
+                options = ['Black', 'Charcoal'];
+            } else if (suit === 'blueCheckeredSuit') {
+                options = ['Blue', 'Navy'];
+            } else if (suit === 'grayDoubleBreastedSuit') {
+                options = ['Gray', 'Dark Gray'];
+            } else if (suit === 'luxuryWhiteSuit') {
+                options = ['White', 'Cream'];
+            } else if (suit === 'blackVelvetSuit') {
+                options = ['Black', 'Velvet Black'];
+            }
+
+            // Clear and update color options
+            colorSelect.innerHTML = '<option value="" disabled selected>Choose Color</option>';
+            options.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+
+            // Clear and update size options
+            sizeSelect.innerHTML = '<option value="" disabled selected>Choose Size</option>';
+            sizeOptions.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1 class="animated-text">Buy now</h1>
+            <h2 class="animated-title">From Trendyza</h2>
+            <form action="checkout.html" method="POST">
+                <!-- Suit Selection -->
+                <label for="suit">Select Suit</label>
+                <select id="suit" name="suit" onchange="updateSuitOptions()" required>
+                    <option value="" disabled selected>Choose a Suit</option>
+                    <option value="classicBlackSuit">Classic Black Suit</option>
+                    <option value="elegantNavySuit">Elegant Navy Suit</option>
+                    <option value="premiumGraySuit">Premium Gray Suit</option>
+                    <option value="modernFitBrownSuit">Modern Fit Brown Suit</option>
+                    <option value="tailoredBlackSuit">Tailored Black Suit</option>
+                    <option value="blueCheckeredSuit">Blue Checkered Suit</option>
+                    <option value="grayDoubleBreastedSuit">Gray Double-Breasted Suit</option>
+                    <option value="luxuryWhiteSuit">Luxury White Suit</option>
+                    <option value="blackVelvetSuit">Black Velvet Suit</option>
+                </select>
+
+                <!-- Color Selection -->
+                <label for="color">Select Color</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Choose Color</option>
+                </select>
+
+                <!-- Size Selection -->
+                <label for="size">Select Size</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Choose Size</option>
+                </select>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your address">
+
+                <a href="thankyou.html">
+                    <button type="button" class="buy-button">Proceed to Checkout</button>
+                </a>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

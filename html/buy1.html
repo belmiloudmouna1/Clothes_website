@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="buy.css">
+    <script>
+        function updateOptions() {
+            const product = document.getElementById('product').value;
+            const colorSelect = document.getElementById('color');
+            const sizeSelect = document.getElementById('size');
+            let options = [];
+            let sizeOptions = [];
+
+            // Update options based on the selected product
+            if (product === 'casualJumpsuit') {
+                options = ['Black', 'Navy', 'Red'];
+                sizeOptions = ['S', 'M', 'L', 'XL'];
+            } else if (product === 'eleganceJumpsuit') {
+                options = ['Beige', 'White', 'Black'];
+                sizeOptions = ['S', 'M', 'L'];
+            } else if (product === 'summerJumpsuit') {
+                options = ['Yellow', 'Blue'];
+                sizeOptions = ['M', 'L', 'XL'];
+            } else if (product === 'utilityJumpsuit') {
+                options = ['Olive', 'Charcoal'];
+                sizeOptions = ['S', 'M', 'L'];
+            } else if (product === 'bohemianJumpsuit') {
+                options = ['Brown', 'Tan'];
+                sizeOptions = ['S', 'M', 'L'];
+            } else if (product === 'chicJumpsuit') {
+                options = ['Black', 'Red'];
+                sizeOptions = ['S', 'M', 'L'];
+            } else if (product === 'sportyJumpsuit') {
+                options = ['Gray', 'White'];
+                sizeOptions = ['M', 'L', 'XL'];
+            }
+
+            // Clear and update color options
+            colorSelect.innerHTML = '<option value="" disabled selected>Choose Color</option>';
+            options.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+
+            // Clear and update size options
+            sizeSelect.innerHTML = '<option value="" disabled selected>Choose Size</option>';
+            sizeOptions.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1 class="animated-text">Buy now</h1>
+            <h2 class="animated-title">From Trendyza</h2>
+            <form action="checkout.html" method="POST">
+                <!-- Product Selection -->
+                <label for="product">Select Jumpsuit</label>
+                <select id="product" name="product" onchange="updateOptions()" required>
+                    <option value="" disabled selected>Choose a Jumpsuit</option>
+                    <option value="casualJumpsuit">Casual Jumpsuit ($90.00)</option>
+                    <option value="eleganceJumpsuit">Elegance Jumpsuit ($120.00)</option>
+                    <option value="summerJumpsuit">Summer Jumpsuit ($85.00)</option>
+                    <option value="utilityJumpsuit">Utility Jumpsuit ($110.00)</option>
+                    <option value="bohemianJumpsuit">Bohemian Jumpsuit ($95.00)</option>
+                    <option value="chicJumpsuit">Chic Jumpsuit ($100.00)</option>
+                    <option value="sportyJumpsuit">Sporty Jumpsuit ($105.00)</option>
+                </select>
+
+                <!-- Color Selection -->
+                <label for="color">Select Color</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Choose Color</option>
+                </select>
+
+                <!-- Size Selection -->
+                <label for="size">Select Size</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Choose Size</option>
+                </select>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your address">
+
+                <a href="thankyou.html">
+                    <button type="button" class="buy-button">Proceed to Checkout</button>
+                </a>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="buy.css">
+    <script>
+        function updateColors() {
+            const coat = document.getElementById('coat').value;
+            const colorSelect = document.getElementById('color');
+            const sizeSelect = document.getElementById('size');
+            let options = [];
+            let sizeOptions = [];
+
+            // Default size options
+            sizeOptions = ['S', 'M', 'L', 'XL', 'XXL'];
+
+            // Update colors and sizes based on the selected coat
+            if (coat === 'classicWool') {
+                options = ['Black', 'Gray', 'Navy'];
+            } else if (coat === 'longTrench') {
+                options = ['Beige', 'Brown'];
+            } else if (coat === 'winterPuffer') {
+                options = ['Black', 'White', 'Red'];
+            } else if (coat === 'peacoat') {
+                options = ['Navy', 'Charcoal'];
+            } else if (coat === 'doubleBreasted') {
+                options = ['Black', 'Gray', 'Camel'];
+                sizeOptions = ['M', 'L', 'XL'];
+            } else if (coat === 'fauxFur') {
+                options = ['Cream', 'Black'];
+            } else if (coat === 'capeCoat') {
+                options = ['Black', 'Burgundy'];
+            } else if (coat === 'hoodedCoat') {
+                options = ['Green', 'Gray', 'Blue'];
+            } else if (coat === 'croppedCoat') {
+                options = ['Pink', 'Beige'];
+            } else if (coat === 'trenchBelt') {
+                options = ['Khaki', 'Brown'];
+            } else if (coat === 'checkedBlazer') {
+                options = ['Gray', 'Black'];
+            } else if (coat === 'fleeceLined') {
+                options = ['Olive', 'Navy'];
+            } else if (coat === 'shearling') {
+                options = ['Cream', 'Brown'];
+            } else if (coat === 'parkaCoat') {
+                options = ['Dark Green', 'Black'];
+            } else if (coat === 'midiCoat') {
+                options = ['Camel', 'Gray'];
+            } else if (coat === 'overcoat') {
+                options = ['Black', 'Gray', 'Tan'];
+            } else if (coat === 'capeTrench') {
+                options = ['Beige', 'Navy'];
+            }
+
+            // Clear and update color options
+            colorSelect.innerHTML = '<option value="" disabled selected>Choose Color</option>';
+            options.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+
+            // Clear and update size options
+            sizeSelect.innerHTML = '<option value="" disabled selected>Choose Size</option>';
+            sizeOptions.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Image Section -->
+     
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1 class="animated-text">Buy now</h1>
+            <h2 class="animated-title">From Trendyza</h2>
+            <form action="checkout.html" method="POST">
+                <!-- Coat Selection -->
+                <label for="coat">Select Coat</label>
+                <select id="coat" name="coat" onchange="updateColors()" required>
+                    <option value="" disabled selected>Choose a Coat</option>
+                    <option value="classicWool">Classic Wool Coat</option>
+                    <option value="longTrench">Long Trench Coat</option>
+                    <option value="winterPuffer">Winter Puffer Coat</option>
+                    <option value="peacoat">Peacoat</option>
+                    <option value="doubleBreasted">Double-Breasted Coat</option>
+                    <option value="fauxFur">Faux Fur Coat</option>
+                    <option value="capeCoat">Cape Coat</option>
+                    <option value="hoodedCoat">Hooded Coat</option>
+                    <option value="croppedCoat">Cropped Coat</option>
+                    <option value="trenchBelt">Trench Coat with Belt</option>
+                    <option value="checkedBlazer">Checked Blazer Coat</option>
+                    <option value="fleeceLined">Fleece Lined Coat</option>
+                    <option value="shearling">Shearling Coat</option>
+                    <option value="parkaCoat">Parka Coat</option>
+                    <option value="midiCoat">Midi Coat</option>
+                    <option value="overcoat">Overcoat</option>
+                    <option value="capeTrench">Cape Trench Coat</option>
+                </select>
+
+                <!-- Color Selection -->
+                <label for="color">Select Color</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Choose Color</option>
+                </select>
+
+                <!-- Size Selection -->
+                <label for="size">Select Size</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Choose Size</option>
+                </select>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your address">
+
+                <a href="thankyou.html">
+                    <button type="button" class="buy-button">Proceed to Checkout</button>
+                </a>
+                
+               
+            </form>
+        </div>
+    </div>
+</body>
+</html>

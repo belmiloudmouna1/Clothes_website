@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="buy3.css">
+    <script>
+        function updateBlazerOptions() {
+            const blazer = document.getElementById('blazer').value;
+            const colorSelect = document.getElementById('color');
+            const sizeSelect = document.getElementById('size');
+            let options = [];
+            let sizeOptions = [];
+
+            // Default size options
+            sizeOptions = ['S', 'M', 'L', 'XL'];
+
+            // Update colors and sizes based on the selected blazer
+            if (blazer === 'classicFitBlazer') {
+                options = ['Black', 'Navy', 'Charcoal'];
+            } else if (blazer === 'modernSlimBlazer') {
+                options = ['Grey', 'Olive', 'Brown'];
+            } else if (blazer === 'doubleBreastedBlazer') {
+                options = ['Black', 'Burgundy'];
+            } else if (blazer === 'casualLinenBlazer') {
+                options = ['Light Grey', 'Blue', 'White'];
+            } else if (blazer === 'tailoredFitBlazer') {
+                options = ['Charcoal', 'Navy'];
+            } else if (blazer === 'peakLapelBlazer') {
+                options = ['Black', 'Blue'];
+            } else if (blazer === 'singleBreastedBlazer') {
+                options = ['Grey', 'Black'];
+            } else if (blazer === 'vintageWoolBlazer') {
+                options = ['Brown', 'Navy'];
+            } else if (blazer === 'houndstoothBlazer') {
+                options = ['Black', 'White'];
+            } else if (blazer === 'blazerWithPiping') {
+                options = ['Black', 'Red'];
+            } else if (blazer === 'modernCheckeredBlazer') {
+                options = ['Grey', 'Navy'];
+            } else if (blazer === 'smartCasualBlazer') {
+                options = ['Black', 'Blue'];
+            } else if (blazer === 'elegantVelvetBlazer') {
+                options = ['Emerald', 'Black'];
+            } else if (blazer === 'checkedWoolBlazer') {
+                options = ['Brown', 'Blue'];
+            } else if (blazer === 'utilityBlazer') {
+                options = ['Olive', 'Black'];
+            } else if (blazer === 'stylishBlazerWithPockets') {
+                options = ['Blue', 'Charcoal'];
+            } else if (blazer === 'leatherBlazer') {
+                options = ['Black', 'Brown'];
+            } else if (blazer === 'minimalistBlackBlazer') {
+                options = ['Black'];
+            } else if (blazer === 'structuredBlazer') {
+                options = ['Dark Grey', 'Black'];
+            } else if (blazer === 'sportyBlazer') {
+                options = ['Navy', 'Grey'];
+            }
+
+            // Clear and update color options
+            colorSelect.innerHTML = '<option value="" disabled selected>Choose Color</option>';
+            options.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+
+            // Clear and update size options
+            sizeSelect.innerHTML = '<option value="" disabled selected>Choose Size</option>';
+            sizeOptions.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1 class="animated-text">Buy now</h1>
+            <h2 class="animated-title">From Trendyza</h2>
+            <form action="checkout.html" method="POST">
+                <!-- Blazer Selection -->
+                <label for="blazer">Select Blazer</label>
+                <select id="blazer" name="blazer" onchange="updateBlazerOptions()" required>
+                    <option value="" disabled selected>Choose a Blazer</option>
+                    <option value="classicFitBlazer">Classic Fit Blazer</option>
+                    <option value="modernSlimBlazer">Modern Slim Blazer</option>
+                    <option value="doubleBreastedBlazer">Double-Breasted Blazer</option>
+                    <option value="casualLinenBlazer">Casual Linen Blazer</option>
+                    <option value="tailoredFitBlazer">Tailored Fit Blazer</option>
+                    <option value="peakLapelBlazer">Peak Lapel Blazer</option>
+                    <option value="singleBreastedBlazer">Single-Breasted Blazer</option>
+                    <option value="vintageWoolBlazer">Vintage Wool Blazer</option>
+                    <option value="houndstoothBlazer">Houndstooth Blazer</option>
+                    <option value="blazerWithPiping">Blazer with Piping</option>
+                    <option value="modernCheckeredBlazer">Modern Checkered Blazer</option>
+                    <option value="smartCasualBlazer">Smart Casual Blazer</option>
+                    <option value="elegantVelvetBlazer">Elegant Velvet Blazer</option>
+                    <option value="checkedWoolBlazer">Checked Wool Blazer</option>
+                    <option value="utilityBlazer">Utility Blazer</option>
+                    <option value="stylishBlazerWithPockets">Stylish Blazer with Pockets</option>
+                    <option value="leatherBlazer">Leather Blazer</option>
+                    <option value="minimalistBlackBlazer">Minimalist Black Blazer</option>
+                    <option value="structuredBlazer">Structured Blazer</option>
+                    <option value="sportyBlazer">Sporty Blazer</option>
+                </select>
+
+                <!-- Color Selection -->
+                <label for="color">Select Color</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Choose Color</option>
+                </select>
+
+                <!-- Size Selection -->
+                <label for="size">Select Size</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Choose Size</option>
+                </select>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your address">
+
+                <a href="thankyou.html">
+                    <button type="button" class="buy-button">Proceed to Checkout</button>
+                </a>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

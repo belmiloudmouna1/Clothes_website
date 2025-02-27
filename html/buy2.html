@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Jogging</title>
+    <link rel="stylesheet" href="buy2.css">
+    <script>
+        function updateJoggingOptions() {
+            const product = document.getElementById('product').value;
+            const colorSelect = document.getElementById('color');
+            const sizeSelect = document.getElementById('size');
+            let options = [];
+            let sizeOptions = [];
+
+            // Update options based on the selected jogging product
+            if (product === 'comfortFitJogging') {
+                options = ['Black', 'Navy', 'Gray'];
+                sizeOptions = ['S', 'M', 'L'];
+            } else if (product === 'trackJogging') {
+                options = ['Red', 'Black'];
+                sizeOptions = ['M', 'L', 'XL'];
+            } else if (product === 'sportyJogging') {
+                options = ['Blue', 'Green'];
+                sizeOptions = ['S', 'M', 'L'];
+            } else if (product === 'meshJogging') {
+                options = ['Black', 'White'];
+                sizeOptions = ['M', 'L', 'XL'];
+            } else if (product === 'basicJogging') {
+                options = ['Gray', 'Navy'];
+                sizeOptions = ['S', 'M', 'L'];
+            } else if (product === 'activeJogging') {
+                options = ['Black', 'Red'];
+                sizeOptions = ['M', 'L'];
+            } else if (product === 'premiumJogging') {
+                options = ['Dark Blue', 'Black'];
+                sizeOptions = ['S', 'M', 'L', 'XL'];
+            } else if (product === 'casualJogging') {
+                options = ['Beige', 'Black'];
+                sizeOptions = ['M', 'L'];
+            } else if (product === 'ecoJogging') {
+                options = ['Olive', 'Brown'];
+                sizeOptions = ['S', 'M'];
+            } else if (product === 'lightJogging') {
+                options = ['White', 'Gray'];
+                sizeOptions = ['M', 'L'];
+            } else if (product === 'relaxJogging') {
+                options = ['Pink', 'Black'];
+                sizeOptions = ['S', 'M'];
+            } else if (product === 'urbanJogging') {
+                options = ['Charcoal', 'Navy'];
+                sizeOptions = ['L', 'XL'];
+            } else if (product === 'sportJogging') {
+                options = ['Red', 'Blue'];
+                sizeOptions = ['M', 'L'];
+            } else if (product === 'heavyJogging') {
+                options = ['Black', 'Olive'];
+                sizeOptions = ['M', 'L', 'XL'];
+            } else if (product === 'fitnessJogging') {
+                options = ['Gray', 'Navy'];
+                sizeOptions = ['S', 'M', 'L'];
+            }
+
+            // Clear and update color options
+            colorSelect.innerHTML = '<option value="" disabled selected>Choose Color</option>';
+            options.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+
+            // Clear and update size options
+            sizeSelect.innerHTML = '<option value="" disabled selected>Choose Size</option>';
+            sizeOptions.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1 class="animated-text">Buy Jogging Now</h1>
+            <h2 class="animated-title">From Trendyza</h2>
+            <form action="checkout.html" method="POST">
+                <!-- Product Selection -->
+                <label for="product">Select Jogging</label>
+                <select id="product" name="product" onchange="updateJoggingOptions()" required>
+                    <option value="" disabled selected>Choose a Jogging</option>
+                    <option value="comfortFitJogging">Comfort Fit Jogging ($40.00)</option>
+                    <option value="trackJogging">Track Jogging ($45.00)</option>
+                    <option value="sportyJogging">Sporty Jogging ($50.00)</option>
+                    <option value="meshJogging">Mesh Jogging ($48.00)</option>
+                    <option value="basicJogging">Basic Jogging ($35.00)</option>
+                    <option value="activeJogging">Active Jogging ($55.00)</option>
+                    <option value="premiumJogging">Premium Jogging ($60.00)</option>
+                    <option value="casualJogging">Casual Jogging ($43.00)</option>
+                    <option value="ecoJogging">Eco Jogging ($38.00)</option>
+                    <option value="lightJogging">Light Jogging ($30.00)</option>
+                    <option value="relaxJogging">Relax Jogging ($45.00)</option>
+                    <option value="urbanJogging">Urban Jogging ($52.00)</option>
+                    <option value="sportJogging">Sport Jogging ($47.00)</option>
+                    <option value="heavyJogging">Heavy Jogging ($59.00)</option>
+                    <option value="fitnessJogging">Fitness Jogging ($42.00)</option>
+                </select>
+
+                <!-- Color Selection -->
+                <label for="color">Select Color</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Choose Color</option>
+                </select>
+
+                <!-- Size Selection -->
+                <label for="size">Select Size</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Choose Size</option>
+                </select>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your address">
+
+                <a href="thankyou.html">
+                    <button type="button" class="buy-button">Proceed to Checkout</button>
+                </a>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

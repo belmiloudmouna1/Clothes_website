@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="buy.css">
+    <script>
+        function updateSweaterOptions() {
+            const sweater = document.getElementById('sweater').value;
+            const colorSelect = document.getElementById('color');
+            const sizeSelect = document.getElementById('size');
+            let options = [];
+            let sizeOptions = [];
+
+            // Default size options
+            sizeOptions = ['S', 'M', 'L', 'XL'];
+
+            // Update colors and sizes based on the selected sweater
+            if (sweater === 'cozyWoolSweater') {
+                options = ['Red', 'Blue'];
+            } else if (sweater === 'knittedPullover') {
+                options = ['Gray', 'Black'];
+            } else if (sweater === 'casualCottonSweater') {
+                options = ['Blue', 'White'];
+            } else if (sweater === 'vintageKnitSweater') {
+                options = ['Green', 'Beige'];
+            } else if (sweater === 'chunkyKnitSweater') {
+                options = ['Black', 'Brown'];
+            } else if (sweater === 'oversizedKnitSweater') {
+                options = ['Pink', 'Lavender'];
+            } else if (sweater === 'ribbedWoolSweater') {
+                options = ['Gray', 'Charcoal'];
+            } else if (sweater === 'stripedCrewNeckSweater') {
+                options = ['Red', 'White'];
+            } else if (sweater === 'highNeckSweater') {
+                options = ['Beige', 'White'];
+            }
+
+            // Clear and update color options
+            colorSelect.innerHTML = '<option value="" disabled selected>Choose Color</option>';
+            options.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+
+            // Clear and update size options
+            sizeSelect.innerHTML = '<option value="" disabled selected>Choose Size</option>';
+            sizeOptions.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1 class="animated-text">Buy now</h1>
+            <h2 class="animated-title">From Trendyza</h2>
+            <form action="checkout.html" method="POST">
+                <!-- Sweater Selection -->
+                <label for="sweater">Select Sweater</label>
+                <select id="sweater" name="sweater" onchange="updateSweaterOptions()" required>
+                    <option value="" disabled selected>Choose a Sweater</option>
+                    <option value="cozyWoolSweater">Cozy Wool Sweater</option>
+                    <option value="knittedPullover">Knitted Pullover</option>
+                    <option value="casualCottonSweater">Casual Cotton Sweater</option>
+                    <option value="vintageKnitSweater">Vintage Knit Sweater</option>
+                    <option value="chunkyKnitSweater">Chunky Knit Sweater</option>
+                    <option value="oversizedKnitSweater">Oversized Knit Sweater</option>
+                    <option value="ribbedWoolSweater">Ribbed Wool Sweater</option>
+                    <option value="stripedCrewNeckSweater">Striped Crew Neck Sweater</option>
+                    <option value="highNeckSweater">High Neck Sweater</option>
+                </select>
+
+                <!-- Color Selection -->
+                <label for="color">Select Color</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Choose Color</option>
+                </select>
+
+                <!-- Size Selection -->
+                <label for="size">Select Size</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Choose Size</option>
+                </select>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your address">
+
+                <a href="thankyou.html">
+                    <button type="button" class="buy-button">Proceed to Checkout</button>
+                </a>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

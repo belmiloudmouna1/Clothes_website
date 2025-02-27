@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="buy4.css">
+    <script>
+        function updateColors() {
+            const dress = document.getElementById('dress').value;
+            const colorSelect = document.getElementById('color');
+            const sizeSelect = document.getElementById('size');
+            let options = [];
+            let sizeOptions = [];
+
+            // Default size options
+            sizeOptions = ['S', 'M', 'L', 'XL'];
+
+            // Update colors and sizes based on the selected dress
+            if (dress === 'casualShirt') {
+                options = ['White', 'Black', 'Beige'];
+            } else if (dress === 'floralShirt') {
+                options = ['Red', 'Navy', 'Pink'];
+            } else if (dress === 'denimShirt') {
+                options = ['Blue', 'Light Blue'];
+            } else if (dress === 'stripedShirt') {
+                options = ['Gray', 'White', 'Blue'];
+            } else if (dress === 'linenShirt') {
+                options = ['Cream', 'Olive', 'Light Brown'];
+            }
+
+            // Clear and update color options
+            colorSelect.innerHTML = '<option value="" disabled selected>Choose Color</option>';
+            options.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+
+            // Clear and update size options
+            sizeSelect.innerHTML = '<option value="" disabled selected>Choose Size</option>';
+            sizeOptions.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1 class="animated-text">Buy now</h1>
+            <h2 class="animated-title">From Trendyza</h2>
+            <form action="checkout.html" method="POST">
+                <!-- Shirt Dress Selection -->
+                <label for="dress">Select Shirt Dress</label>
+                <select id="dress" name="dress" onchange="updateColors()" required>
+                    <option value="" disabled selected>Choose a Shirt Dress</option>
+                    <option value="casualShirt">Casual Shirt Dress</option>
+                    <option value="floralShirt">Floral Shirt Dress</option>
+                    <option value="denimShirt">Denim Shirt Dress</option>
+                    <option value="stripedShirt">Striped Shirt Dress</option>
+                    <option value="linenShirt">Linen Shirt Dress</option>
+                </select>
+
+                <!-- Color Selection -->
+                <label for="color">Select Color</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Choose Color</option>
+                </select>
+
+                <!-- Size Selection -->
+                <label for="size">Select Size</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Choose Size</option>
+                </select>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your address">
+
+                <a href="thankyou.html">
+                    <button type="button" class="buy-button">Proceed to Checkout</button>
+                </a>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

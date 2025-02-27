@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="buy9.css">
+    <script>
+        function updatePantOptions() {
+            const pant = document.getElementById('pant').value;
+            const colorSelect = document.getElementById('color');
+            const sizeSelect = document.getElementById('size');
+            let options = [];
+            let sizeOptions = [];
+
+            // Default size options
+            sizeOptions = ['S', 'M', 'L', 'XL'];
+
+            // Update colors and sizes based on the selected pant
+            if (pant === 'casualDenimPant') {
+                options = ['Blue', 'Black'];
+            } else if (pant === 'sportyJoggerPant') {
+                options = ['Gray', 'Navy'];
+            } else if (pant === 'formalTrouserPant') {
+                options = ['Black', 'Charcoal'];
+            } else if (pant === 'chinosPant') {
+                options = ['Beige', 'Olive'];
+            } else if (pant === 'skinnyFitPant') {
+                options = ['Black', 'Gray'];
+            } else if (pant === 'relaxedFitPant') {
+                options = ['Light Blue', 'White'];
+            } else if (pant === 'wideLegPant') {
+                options = ['White', 'Navy'];
+            } else if (pant === 'highWaistPant') {
+                options = ['Black', 'Beige'];
+            } else if (pant === 'flaredPant') {
+                options = ['Blue', 'Black'];
+            }
+
+            // Clear and update color options
+            colorSelect.innerHTML = '<option value="" disabled selected>Choose Color</option>';
+            options.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+
+            // Clear and update size options
+            sizeSelect.innerHTML = '<option value="" disabled selected>Choose Size</option>';
+            sizeOptions.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1 class="animated-text">Buy now</h1>
+            <h2 class="animated-title">From Trendyza</h2>
+            <form action="checkout.html" method="POST">
+                <!-- Pant Selection -->
+                <label for="pant">Select Pant</label>
+                <select id="pant" name="pant" onchange="updatePantOptions()" required>
+                    <option value="" disabled selected>Choose a Pant</option>
+                    <option value="casualDenimPant">Casual Denim Pant</option>
+                    <option value="sportyJoggerPant">Sporty Jogger Pant</option>
+                    <option value="formalTrouserPant">Formal Trouser Pant</option>
+                    <option value="chinosPant">Chinos Pant</option>
+                    <option value="skinnyFitPant">Skinny Fit Pant</option>
+                    <option value="relaxedFitPant">Relaxed Fit Pant</option>
+                    <option value="wideLegPant">Wide Leg Pant</option>
+                    <option value="highWaistPant">High-Waist Pant</option>
+                    <option value="flaredPant">Flared Pant</option>
+                </select>
+
+                <!-- Color Selection -->
+                <label for="color">Select Color</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Choose Color</option>
+                </select>
+
+                <!-- Size Selection -->
+                <label for="size">Select Size</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Choose Size</option>
+                </select>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your address">
+
+                <a href="thankyou.html">
+                    <button type="button" class="buy-button">Proceed to Checkout</button>
+                </a>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

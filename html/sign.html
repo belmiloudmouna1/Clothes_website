@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Trendyza</title>
+    <link rel="stylesheet" href="sign.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Sign Up</h1>
+            <form action="register.html" method="get"> <!-- Change the form action to register.html -->
+                <!-- Full Name -->
+                <div class="input-group">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <label for="fullname"></label>
+                </div>
+                <!-- Email -->
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <label for="email"></label>
+                </div>
+                <!-- Username -->
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <label for="username"></label>
+                </div>
+                <!-- Password -->
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <label for="password"></label>
+                </div>
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+                    <label for="confirm-password"></label>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+            <p class="redirect">Already have an account? <a href="register.html">Login</a></p> <!-- Correct link to login page -->
+        </div>
+    </div>
+</body>
+</html>
