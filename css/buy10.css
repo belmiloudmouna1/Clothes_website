@@ -1,0 +1,174 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* Style the message */
+.message {
+    font-size: 1.0em;
+    color: #800020; /* Or any color you prefer */
+    text-align: center;
+    margin-top: 20px;
+    padding: 0px;
+    background-color: #f5f5f5; /* Optional: background for better visibility */
+    border-radius: 5px;
+    width: 20%; /* Adjust as needed */
+    margin-left: 5;
+    margin-right: auto;
+}
+
+/* Container for the centered content */
+.container {
+    display: flex;
+    gap: 20px;
+    background: #faf5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Image Section */
+.image-section {
+    flex: 1;
+    max-width: 800px; /* Set the maximum width */
+}
+
+.image-section img {
+    width: 120%;        /* Makes sure the image fills the width of its container */
+    height: 200;       /* Keeps the aspect ratio intact */
+    max-height: 1000px;  /* Limits the height of the image */
+    border-radius: 10px;
+    object-fit: cover;  /* Ensures the image covers the box without stretching */
+    animation: slideIn 1.5s ease-out;
+}
+/* Form Section */
+.form-section {
+    flex: 1;
+    animation: fadeIn 2s ease-out;
+}
+
+.form-section h1 {
+    margin-bottom: 20px;
+    text-align: center; /* Align to the left */
+    color: #1f030a;
+    animation: slideInLeft 1s ease-out;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    text-align: center; /* Align to the left */
+    color: #800020;
+    animation: slideInLeft 1.2s ease-out;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+form label {
+    font-weight: bold;
+    color: #0b0a0a;
+    text-align: left;
+}
+
+form select,
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #a09497;
+    border-radius: 5px;
+    background: #fef8fb;
+    box-sizing: border-box;
+    animation: fadeIn 1.5s ease-out;
+}
+
+form textarea {
+    resize: none;
+}
+
+form select:focus, form input:focus, form textarea:focus {
+    border-color: #6c63ff;
+    outline: none;
+    background: #fff;
+}
+
+/* Button Styling */
+.buy-btn {
+    background-color: #800020;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 2s ease-out;
+}
+
+.buy-btn:hover {
+    background-color: #6c1f1f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section {
+        max-width: 100%;
+    }
+}
+
+/* Keyframe Animations */
+
+/* Fade-In Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-In Effect from Left */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide-In Effect for Image */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
