@@ -1,0 +1,188 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d9d9d9;
+    color: #800020;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: ##fff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #800060;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #FF007F;
+    font-weight: 500;
+    position: relative;
+}
+
+header nav ul li a:hover {
+    color: #FF007F;
+}
+
+/* Authentication Buttons */
+.auth-buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.auth-buttons a:hover {
+    transform: scale(1.1);
+}
+
+.auth-buttons .login {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #800020;
+}
+
+.auth-buttons .Sign {
+    background: linear-gradient(45deg, #800020, #FF007F);
+    color: #ffff;
+    border: none;
+}
+
+/* Main Section */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Content Section */
+main .content {
+    max-width: 50%;
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+
+main .content h1 {
+    font-size: 48px;
+    color: #800020;
+}
+
+main .content h1 span {
+    color: #FF007F;
+}
+
+main .content p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Animated Text */
+.animated-text {
+    opacity: 0;
+    animation: textFadeIn 2s ease-in-out forwards;
+}
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Join Button */
+/* Join Button */
+main .content .join-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #800020, #800020);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+main .content .join-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #800020, #800020);
+}
+
+/* Image Section */
+main .image {
+    position: relative;
+    width: 35%;
+    height: 600px;
+    background: url('https://assets.onecompiler.app/42ytbephb/42ytcnadh/photo_2024-11-21_20-18-55.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 15px;
+    animation: slideInFromRight 1.5s ease-in-out;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Button Animation */
+.animated-button {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
