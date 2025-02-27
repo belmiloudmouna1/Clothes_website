@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header Section */
+.about-header {
+    background-color: #f8f8f8; /* Burgundy color */
+    color: #800020;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(90, 2, 2, 0.1); /* Soft shadow */
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-50px); /* Start off-screen */
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.about-header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 60px 20px;
+    background-color: #fff;
+    margin: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px); /* Start below */
+    animation: fadeInUp 1.2s ease-out 0.5s forwards;
+}
+
+/* Content Styling inside About Us */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.about-us a {
+    color: #800020;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-us a:hover {
+    text-decoration: underline;
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,131 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://i.pinimg.com/736x/c0/50/33/c05033008be518fe53e0b0d7d3ae6b1e.jpg');
+    background-position: left center;  /* Position the image to the left center */
+    background-attachment: fixed;  /* Make the background fixed */
+    background-repeat: no-repeat;  /* Prevent the image from repeating */
+    background-size: 50% 100%;  /* Make the image cover the left half of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-wrapper {
+    background-color: #a4a2a2;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    animation: slideUp 1s ease-in-out;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #a4a4a4;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #8B1A1A; /* Burgundy Color */
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #8B1A1A;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #8B1A1A; /* Burgundy Color */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #6a0d0d;
+}
+
+.redirect {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.redirect a {
+    color: #8B1A1A;
+    text-decoration: none;
+}
+
+.redirect a:hover {
+    text-decoration: underline;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

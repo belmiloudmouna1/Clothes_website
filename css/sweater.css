@@ -1,0 +1,135 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+.container {
+    padding: 20px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+h5 {
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+/* Sweater List */
+.sweater-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Individual Sweater Item */
+.sweater-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.sweater-item:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+.sweater-item:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+/* Sweater Image */
+.sweater-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.sweater-img:hover {
+    transform: scale(1);
+}
+
+/* Sweater Info */
+.sweater-info {
+    margin-top: 10px;
+}
+
+/* Price */
+.price {
+    font-size: 1.2em;
+    color: #e91e63;
+    margin: 10px 0;
+}
+
+/* Colors */
+.colors {
+    font-weight: bold;
+}
+
+/* Size Selector */
+.size-selector {
+    font-size: 1em;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 150px;
+    background-color: #f9f9f9;
+}
+
+/* Buy Button */
+.buy-button {
+    background-color: #800020;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #00796b;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
